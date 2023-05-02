@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Bodoni Moda', serif;
+}
+body{
+    height: 100vh;
+    background: url(bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container{
+    perspective: 1000px;
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.card{
+    width: 280px;
+    height: 360px;
+    position: absolute;
+    top: 100px;
+    left: 230px;
+    transition: 2s;
+    transform-style: preserve-3d;
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
+.block{
+    position: absolute;
+    top:200px;
+    left: 700px;
+    perspective: 800px;
+}
+.outside,.inside{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 1.5rem;
+}
+.outside{
+    background-color: rgb(245, 144, 67);
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.inside{
+    background-color: rgb(224, 234, 32);
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.outside h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(39, 26, 226);
+        margin-bottom: 30px;
+}
+.outside h3{
+    /* font-size: 2rem; */
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+}
+.inside h3{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(116, 26, 226);
+    margin-top: 10px;
+}
+.inside h2{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: rgb(39, 26, 226);
+    margin-top: 20px;
+}
+.inside p{
+    color: white;
+}
+
+
+.outside img{
+    width: 125px;
+    height: 125px;
+    border-radius: 10%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+.inside img{
+    width: 125px;
+    height: 125px;
+    border-radius: 30%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.frames{
+    width: 400px;
+    height: 150px;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 0.8rem;
+
+    transform: rotateY(-230deg) rotateX(10deg);
+    position: absolute;
+}
+
+
+.frames img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+.frames p{
+    font-size: 18px;
+    font-weight: bold;
+    transform: rotateY(180deg);
+ }
+ .frames:nth-child(1)
+ {
+     top:-110px;
+     z-index: -1;
+     background-color: #83e6c5;
+ }
+ .frames:nth-child(2){
+     background-color: #7f91e9;
+ }
+ .frames:nth-child(3)
+ {
+     top:110px;
+     background-color: #8ae591;
+ }
+
+ @media only screen and (max-width: 800px) {
+    body {
+        background: url(bg.jpg);
+       }
+       .block{
+        top:800px;
+        left: 50px;
+     }
+     .card{
+        top: 100px;
+        left: 130px;
+    }
+
+    .frames{
+        transform: rotateY(-180deg) rotateX(10deg);
+    }
+  }
